@@ -5,4 +5,4 @@
 - [Styled Components](https://styled-components.com/) - For styles
 - -Redux (https://redux.js.org/)- for state management
 
-
+### Currently in Progress!
