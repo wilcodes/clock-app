@@ -1,7 +1,7 @@
-import * as actionTypes from "../actions/actions"
-
+import * as actionTypes from "../actions/types"
+import { combineReducers } from "redux";
 const initialState = {
-    currentTime: "",
+    currentTime: null,
     quote: "",
     message:"",
     location:[],
@@ -19,4 +19,7 @@ const rootReducer = (state = initialState, action)=>{
     }
 }
 
-export default rootReducer
+const reducer = combineReducers({
+    state:rootReducer
+})
+export default reducer;
