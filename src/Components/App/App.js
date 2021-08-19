@@ -3,10 +3,12 @@ import Wrapper from "../Wrapper/Wrapper";
 import useApi from "../../hooks/useApi";
 import {ClockLoader} from "react-spinners";
 import {isEmpty} from "./objectFunction";
-
+import Quote from "../Quote/Quote";
+import WelcomeMessage from "../WelcomeMessage/WelcomeMessage";
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
 const quoteAPI = "https://api.quotable.io/random";
+
 
 
 const App = (props)=> {
@@ -14,9 +16,10 @@ const App = (props)=> {
     const [worldTimeData, setWorldTimeData] = useState({});
     const [locationData, setLocationData] = useState({});
     const [quoteData, setQuoteData] = useState({})
+
     const worldTime = useApi(worldTimeAPI);
     const location = useApi(geolocationAPI);
-    const quote = useApi(quoteAPI)
+    const quote = useApi(quoteAPI);
 
 
    useEffect(()=>{
@@ -26,16 +29,22 @@ const App = (props)=> {
    },[worldTime, location, quote])
 
 
+    const handleTime = (string, cut) =>{
+       let time = string.split("T").pop();
+       time = time.substring(0,cut);
+       return time
+    }
+
     const handleReturn = () =>{
        if( isEmpty(worldTimeData) || isEmpty(locationData) || isEmpty(quoteData)){
-           return null
+           return <ClockLoader size={200} color={"#ffffff"}/>
        }else {
            return (
                <>
-                   <ClockLoader size={200} color={"#ffffff"}/>
-                   <h1>{worldTimeData.data.datetime}</h1>
-                   <h1>{locationData.data.region_name}</h1>
-                   <h1>{quoteData.data.content}</h1>
+                   <Quote message={quoteData.data.content} author={quoteData.data.author}/>
+                   <WelcomeMessage time={handleTime(worldTime.data.datetime, 2)}/>
+
+
                </>
            )
        }
