@@ -1,8 +1,7 @@
+import {useState, useEffect} from "react";
 import Wrapper from "../Wrapper/Wrapper";
 import useApi from "../../hooks/useApi";
-import {connect} from "react-redux";
-import {setCurrentTime} from "../../actions/actions";
-import {BounceLoader} from "react-spinners";
+import {ClockLoader} from "react-spinners";
 import {isEmpty} from "./objectFunction";
 
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
@@ -11,23 +10,42 @@ const quoteAPI = "https://api.quotable.io/random";
 
 
 const App = (props)=> {
-    props.setCurrentTime(useApi(worldTimeAPI));
 
-    const handlerApiCheck = () =>{
-        if (isEmpty(props.currentTime)){
-           return <BounceLoader/>
-        }else {
-           return <h1>{props.currentTime.data.datetime}</h1>
-        }
+    const [worldTimeData, setWorldTimeData] = useState({});
+    const [locationData, setLocationData] = useState({});
+    const [quoteData, setQuoteData] = useState({})
+    const worldTime = useApi(worldTimeAPI);
+    const location = useApi(geolocationAPI);
+    const quote = useApi(quoteAPI)
+
+
+   useEffect(()=>{
+       setWorldTimeData(worldTime);
+       setLocationData(location);
+       setQuoteData(quote);
+   },[worldTime, location, quote])
+
+
+    const handleReturn = () =>{
+       if( isEmpty(worldTimeData) || isEmpty(locationData) || isEmpty(quoteData)){
+           return null
+       }else {
+           return (
+               <>
+                   <ClockLoader size={200} color={"#ffffff"}/>
+                   <h1>{worldTimeData.data.datetime}</h1>
+                   <h1>{locationData.data.region_name}</h1>
+                   <h1>{quoteData.data.content}</h1>
+               </>
+           )
+       }
+
     }
-
   return (
    <Wrapper>
-       {handlerApiCheck()}
+       {handleReturn()}
    </Wrapper>
   );
 }
-const mapStateToProps = state => ({
-    currentTime: state.state.currentTime
-})
-export default connect(mapStateToProps, {setCurrentTime})(App);
+
+export default App;
