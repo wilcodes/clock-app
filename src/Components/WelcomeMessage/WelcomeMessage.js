@@ -7,6 +7,7 @@ const [welcomeMessage,setWelcomeMessage] = useState("Good morning, It's currentl
 const handleWelcomeMessage =()=>{
     if (parseInt(props.time) >= 20){
         setWelcomeMessage("Good evening, It's currently");
+        props.setDayNightState("Night")
     }
 }
 useEffect(()=>{
