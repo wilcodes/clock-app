@@ -5,6 +5,7 @@ import {ClockLoader} from "react-spinners";
 import {isEmpty} from "./objectFunction";
 import Quote from "../Quote/Quote";
 import WelcomeMessage from "../WelcomeMessage/WelcomeMessage";
+import CurrentTime from "../CurrentTime/CurrentTime";
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
 const quoteAPI = "https://api.quotable.io/random";
@@ -43,8 +44,7 @@ const App = (props)=> {
                <>
                    <Quote message={quoteData.data.content} author={quoteData.data.author}/>
                    <WelcomeMessage time={handleTime(worldTime.data.datetime, 2)}/>
-
-
+                   <CurrentTime currentTime={handleTime(worldTime.data.datetime,5)} currentTimeZone={worldTime.data.abbreviation}/>
                </>
            )
        }

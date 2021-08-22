@@ -12,6 +12,7 @@ const handleWelcomeMessage =()=>{
 useEffect(()=>{
     handleWelcomeMessage()
 },[welcomeMessage])
+
    return(
        <MessageWrapper>
             <MessageContent>
