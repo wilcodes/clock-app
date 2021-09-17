@@ -1,14 +1,14 @@
-import {QuoteContent, QuoteWrapper} from "./StyledQuote";
+import {QuoteContent, QuoteWrapper, QuoteAuthor} from "./StyledQuote";
 
 
 const Quote = (props) =>(
     <QuoteWrapper>
         <QuoteContent>
-            {props.message}
+            "{props.message}"
         </QuoteContent>
-        <QuoteContent>
+        <QuoteAuthor>
             {props.author}
-        </QuoteContent>
+        </QuoteAuthor>
     </QuoteWrapper>
 );
 

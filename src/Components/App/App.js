@@ -7,6 +7,8 @@ import Quote from "../Quote/Quote";
 import WelcomeMessage from "../WelcomeMessage/WelcomeMessage";
 import CurrentTime from "../CurrentTime/CurrentTime";
 import CurrentCity from "../CurrentCity/CurrentCity";
+import {Backdrop} from "../Backdrop/Backdrop";
+import {SpinnerWrapper} from "../Spinner";
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
 const quoteAPI = "https://api.quotable.io/random";
@@ -38,9 +40,28 @@ const App = (props)=> {
     }
 
     const handleReturn = () =>{
+        setTimeout(()=>{
+            return(
+                <>
+                    <Backdrop/>
+                    <SpinnerWrapper>
+                        <ClockLoader size={200} color={"#1A2321"} />
+                    </SpinnerWrapper>
 
+                </>
+            )
+        },[2000])
        if( isEmpty(worldTimeData) || isEmpty(locationData) || isEmpty(quoteData)){
-           return <ClockLoader size={200} color={"#ffffff"}/>
+           return (
+               <>
+                   <Backdrop/>
+                   <SpinnerWrapper>
+                       <ClockLoader size={200} color={"#1A2321"} />
+                   </SpinnerWrapper>
+
+               </>
+
+           )
        }else {
            return (
                <>

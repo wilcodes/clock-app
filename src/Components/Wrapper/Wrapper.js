@@ -5,7 +5,11 @@ const Wrapper = styled.div`
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: ${props => props.time === "daylight" ? `url(${mobileDayBackground})`: `url(${mobileNightBackground})` } ;
+  background-image: ${props => props.time === "daylight" ? ` linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)), url(${mobileDayBackground})`: `linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)), url(${mobileNightBackground})` };
+  box-sizing: border-box;
+  padding: 2em;
 `
 
 export default Wrapper;
