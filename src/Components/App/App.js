@@ -9,6 +9,8 @@ import CurrentTime from "../CurrentTime/CurrentTime";
 import CurrentCity from "../CurrentCity/CurrentCity";
 import {Backdrop} from "../Backdrop/Backdrop";
 import {SpinnerWrapper} from "../Spinner";
+import Button from "../Button/Button";
+
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
 const quoteAPI = "https://api.quotable.io/random";
@@ -73,6 +75,7 @@ const App = (props)=> {
                                 currentTimeZone={worldTime.data.abbreviation}/>
                    <CurrentCity region={locationData.data.region_name}
                                 country={locationData.data.country_code}/>
+                   <Button/>
                </>
            )
        }

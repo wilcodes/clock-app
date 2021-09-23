@@ -14,9 +14,9 @@ export const QuoteContent = styled.p`
 `;
 
 export const QuoteAuthor = styled.p `
-  margin-top: 0.4em;
+  margin-top: 0.7em;
   font-weight: 200;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   filter: drop-shadow(2px 2px 2px #000000);
 `

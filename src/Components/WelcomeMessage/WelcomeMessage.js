@@ -1,6 +1,6 @@
 import {MessageContent, MessageWrapper} from "./StyledMessage";
 import {useEffect, useState} from "react";
-
+import {FaMoon, FaSun} from "react-icons/fa"
 const WelcomeMessage = (props) =>{
 const [welcomeMessage,setWelcomeMessage] = useState("Good morning, It's currently");
 
@@ -17,7 +17,7 @@ useEffect(()=>{
    return(
        <MessageWrapper>
             <MessageContent>
-                {welcomeMessage}
+                {welcomeMessage === "Good morning, It's currently" ? <FaSun/> : <FaMoon/>} {welcomeMessage}
             </MessageContent>
        </MessageWrapper>)
 };
