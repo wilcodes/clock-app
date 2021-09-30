@@ -10,6 +10,7 @@ import CurrentCity from "../CurrentCity/CurrentCity";
 import {Backdrop} from "../Backdrop/Backdrop";
 import {SpinnerWrapper} from "../Spinner";
 import Button from "../Button/Button";
+import DropDownContent from "../DropDownContent/DropDownContent";
 
 const worldTimeAPI = "http://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
@@ -21,8 +22,9 @@ const App = (props)=> {
 
     const [worldTimeData, setWorldTimeData] = useState({});
     const [locationData, setLocationData] = useState({});
-    const [quoteData, setQuoteData] = useState({})
-    const [dayNight, setDayNight] = useState("daylight")
+    const [quoteData, setQuoteData] = useState({});
+    const [dayNight, setDayNight] = useState("daylight");
+    const [isDropDownOpen, setDropDownOpen] = useState(false);
     const worldTime = useApi(worldTimeAPI);
     const location = useApi(geolocationAPI);
     const quote = useApi(quoteAPI);
@@ -75,7 +77,8 @@ const App = (props)=> {
                                 currentTimeZone={worldTime.data.abbreviation}/>
                    <CurrentCity region={locationData.data.region_name}
                                 country={locationData.data.country_code}/>
-                   <Button/>
+                   <Button handleButton={(isDropDownOpen)=> setDropDownOpen(!isDropDownOpen)}/>
+                   <DropDownContent isDropDownOpen={isDropDownOpen}/>
                </>
            )
        }

@@ -1,7 +1,8 @@
 import {ButtonStyled, ButtonContent,IconWrapper} from "./ButtonStyle";
 import {FaAngleDown} from "react-icons/fa";
-const Button = () => (
-    <ButtonStyled>
+
+const Button = (props) => (
+    <ButtonStyled onClick={()=>props.handleButton()}>
             <ButtonContent>
                 More
             </ButtonContent>
