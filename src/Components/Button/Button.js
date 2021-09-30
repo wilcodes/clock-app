@@ -1,18 +1,30 @@
+import {useState, useEffect} from "react";
 import {ButtonStyled, ButtonContent,IconWrapper} from "./ButtonStyle";
-import {FaAngleDown} from "react-icons/fa";
+import {FaAngleDown, FaAngleUp} from "react-icons/fa";
 
-const Button = (props) => (
-    <ButtonStyled onClick={()=>props.handleButton()}>
+
+const Button = (props) => {
+    const [buttonContent, setButtonContent] = useState("More");
+
+    useEffect(()=>{
+        if(props.isDropDownOpen){
+            setButtonContent("Less")
+        }else {
+            setButtonContent("More")
+        }
+
+    },[props.handleButton, props.isDropDownOpen])
+    return(
+        <ButtonStyled onClick={() => props.handleButton(props.isDropDownOpen)}>
             <ButtonContent>
-                More
+                {buttonContent}
             </ButtonContent>
-           <IconWrapper>
-               <FaAngleDown style={{color:"#ffffff"}}/>
-           </IconWrapper>
-
-
-    </ButtonStyled>
-);
+            <IconWrapper>
+                {props.isDropDownOpen ? <FaAngleDown style={{color: "#ffffff"}}/> : <FaAngleUp style={{color: "#ffffff"}}/> }
+            </IconWrapper>
+        </ButtonStyled>
+        )
+};
 
 
 export default Button;

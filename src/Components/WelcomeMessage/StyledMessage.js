@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MessageWrapper = styled.section`
-    margin-top: 355px;
+ 
 `;
 
 export const MessageContent = styled.p`

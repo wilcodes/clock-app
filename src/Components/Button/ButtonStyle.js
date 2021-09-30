@@ -11,6 +11,12 @@ export const ButtonStyled = styled.button`
   display: flex;
   flex-flow: row;
   justify-content: space-around;
+  cursor: pointer;
+  
+  &:hover{
+   background-color: #cccccc;
+  }
+  
 `;
 
 export const ButtonContent = styled.p`

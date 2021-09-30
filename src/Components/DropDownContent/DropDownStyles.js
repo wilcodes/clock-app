@@ -6,7 +6,7 @@ export const DropDownBox = styled.div`
   width:100%;
   left: 0;
   bottom: 0;
-  height: 40%;
+  height: 75%;
   background-color:rgba(0,0,0,0.7);
   transition: transform 0.3s ease-in;
   box-sizing: border-box;

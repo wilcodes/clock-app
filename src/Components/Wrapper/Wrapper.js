@@ -11,5 +11,9 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   padding: 2em;
 `
-
+export const HourWrapper = styled.div`
+  margin: 0 auto;
+  position: absolute;
+  top: ${props => props.isDropDownOpen ? "30%": "65%"};
+`
 export default Wrapper;
