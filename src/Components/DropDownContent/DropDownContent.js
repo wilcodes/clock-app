@@ -10,37 +10,37 @@ const DropDownContent = (props)=>{
                 </Label>
 
                 <Content>
-                    Europe/London
+                    {props.timeZone}
                 </Content>
             </Row>
 
             <Row>
                 <Label>
-                    current timezone
+                    Day of the year
                 </Label>
 
                 <Content>
-                    Europe/London
+                    {props.year}
                 </Content>
             </Row>
 
             <Row>
                 <Label>
-                    current timezone
+                    day of the week
                 </Label>
 
                 <Content>
-                    Europe/London
+                    {props.weekDay}
                 </Content>
             </Row>
 
             <Row>
                 <Label>
-                    current timezone
+                   week number
                 </Label>
 
                 <Content>
-                    Europe/London
+                    {props.week}
                 </Content>
             </Row>
 

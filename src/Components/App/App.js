@@ -84,7 +84,12 @@ const App = (props)=> {
 
                    />
                    </HourWrapper>
-                   <DropDownContent isDropDownOpen={isDropDownOpen}/>
+                   <DropDownContent isDropDownOpen={isDropDownOpen}
+                                    timeZone={location.data.time_zone}
+                                    year={worldTime.data.day_of_year}
+                                    weekDay={worldTime.data.day_of_week}
+                                    week={worldTime.data.week_number}
+                   />
                </>
            )
        }
