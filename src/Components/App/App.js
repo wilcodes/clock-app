@@ -69,12 +69,16 @@ const App = (props)=> {
        }else {
            return (
                <>
-                   <Quote message={quoteData.data.content} author={quoteData.data.author}/>
+                   {
+                       !isDropDownOpen &&
+                       (<Quote message={quoteData.data.content}
+                               author={quoteData.data.author}/>)
+                   }
                    <HourWrapper  isDropDownOpen={isDropDownOpen}>
-                   <WelcomeMessage time={handleTime(worldTime.data.datetime, 2)}
-                                   setDayNightState={()=>setDayNight()}
 
-                   />
+                       <WelcomeMessage time={handleTime(worldTime.data.datetime, 2)}
+                                        setDayNightState={() => setDayNight()}/>
+
                    <CurrentTime currentTime={handleTime(worldTime.data.datetime,5)}
                                 currentTimeZone={worldTime.data.abbreviation}/>
                    <CurrentCity region={locationData.data.region_name}

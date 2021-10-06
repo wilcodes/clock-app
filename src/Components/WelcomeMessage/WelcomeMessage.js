@@ -5,7 +5,7 @@ const WelcomeMessage = (props) =>{
 const [welcomeMessage,setWelcomeMessage] = useState("Good morning, It's currently");
 
 const handleWelcomeMessage =()=>{
-    if (parseInt(props.time) >= 20){
+    if (parseInt(props.time) >= 18){
         setWelcomeMessage("Good evening, It's currently");
         props.setDayNightState("Night")
     }

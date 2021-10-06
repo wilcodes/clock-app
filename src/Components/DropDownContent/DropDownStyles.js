@@ -30,8 +30,8 @@ export const Content = styled.li`
   color: #ffffff;
   font-weight: 700;
   line-height: 10px;
-  font-size: 1.5em;
-  flex: 0 0 55%;
+  font-size: 1em;
+  flex: 0 0 60%;
   text-align: center;
 `;
 
@@ -40,7 +40,7 @@ export const Row = styled.ul`
   flex-flow: row;
   justify-content: space-around;
   list-style: none;
-  margin: 3em 0;
+  margin: 2em 0;
  
 `;
 
