@@ -1,48 +1,24 @@
-import {Label, Content, DropDownBox, Row} from "./DropDownStyles";
+import { DropDownBox} from "./DropDownStyles";
+import Description from "./Description";
 
 
 const DropDownContent = (props)=>{
+    const content = [
+        {label: "current Time", content:props.timeZone},
+        {label: "day of the year", content:props.year},
+        {label: "day of the week", content:props.weekDay},
+        {label: "week number", content:props.week}]
     return(
-        <DropDownBox isDropDownOpen={props.isDropDownOpen}>
-            <Row>
-                <Label>
-                    current timezone
-                </Label>
+        <DropDownBox isDropDownOpen={props.isDropDownOpen}
+                     dayNight={props.dayNight}   >
 
-                <Content>
-                    {props.timeZone}
-                </Content>
-            </Row>
-
-            <Row>
-                <Label>
-                    Day of the year
-                </Label>
-
-                <Content>
-                    {props.year}
-                </Content>
-            </Row>
-
-            <Row>
-                <Label>
-                    day of the week
-                </Label>
-
-                <Content>
-                    {props.weekDay}
-                </Content>
-            </Row>
-
-            <Row>
-                <Label>
-                   week number
-                </Label>
-
-                <Content>
-                    {props.week}
-                </Content>
-            </Row>
+            { content.map((el, id)=>(
+                <Description label={el.label}
+                             content={el.content}
+                             id={id}
+                             dayNight={props.dayNight}
+                />
+                ))}
 
         </DropDownBox>
         )
