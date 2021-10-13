@@ -13,7 +13,7 @@ export const DropDownBox = styled.div`
   transition: transform 0.3s ease-in;
   box-sizing: border-box;
   transform: ${ props  => props.isDropDownOpen ? 'translateY(50%)' : 'translateY(100%)'};
-  
+  padding: 0.5em;
 `;
 
 export const Label = styled.li`
@@ -21,11 +21,16 @@ export const Label = styled.li`
  
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 10px;
+  line-height: 12px;
   font-size: 0.7em;
   text-align: left;
-  flex: 0 0 40%;
+  flex: 0 0 37%;
   margin-left: 2em;
+
+  @media only screen and (min-width: 374px)  {
+    font-size: 0.9em;
+    line-height: 20px;
+  }
 `;
 
 export const Content = styled.li`
@@ -35,6 +40,11 @@ export const Content = styled.li`
   font-size: 1em;
   flex: 0 0 60%;
   text-align: center;
+
+  @media only screen and (min-width: 370px)  {
+    font-size: 1.3em;
+    
+  }
 `;
 
 export const Row = styled.ul`
@@ -42,7 +52,10 @@ export const Row = styled.ul`
   flex-flow: row;
   justify-content: space-around;
   list-style: none;
-  margin: 2em 0;
+  margin: 1.2em 0;
+  @media only screen and (min-width: 370px)  {
+    margin: 1.5em 0;
+  }
  
 `;
 

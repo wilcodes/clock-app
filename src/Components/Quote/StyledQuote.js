@@ -11,6 +11,12 @@ export const QuoteContent = styled.p`
   line-height: 20px;
   font-weight: lighter;
   filter: drop-shadow(2px 2px 2px #000000);
+
+  @media only screen and (min-width: 700px)  {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: lighter;
+  }
 `;
 
 export const QuoteAuthor = styled.p `
