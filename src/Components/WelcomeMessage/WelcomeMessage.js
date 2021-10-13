@@ -1,18 +1,19 @@
 import {MessageContent, MessageWrapper} from "./StyledMessage";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useCallback} from "react";
 import {FaMoon, FaSun} from "react-icons/fa"
-const WelcomeMessage = (props) =>{
+const WelcomeMessage = ({time, setDayNightState}) =>{
 const [welcomeMessage,setWelcomeMessage] = useState("Good morning, It's currently");
 
-const handleWelcomeMessage =()=>{
-    if (parseInt(props.time) >= 18){
+const handleWelcomeMessage = useCallback(()=>{
+    if (parseInt(time) >= 18){
         setWelcomeMessage("Good evening, It's currently");
-        props.setDayNightState("Night")
+        setDayNightState("Night")
     }
-}
+},[ setDayNightState, time],);
+
 useEffect(()=>{
-    handleWelcomeMessage()
-},[welcomeMessage])
+    handleWelcomeMessage();
+},[welcomeMessage, handleWelcomeMessage])
 
    return(
        <MessageWrapper>
