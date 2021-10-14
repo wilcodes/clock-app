@@ -12,7 +12,7 @@ import {SpinnerWrapper} from "../Spinner";
 import Button from "../Button/Button";
 import DropDownContent from "../DropDownContent/DropDownContent";
 
-const worldTimeAPI = "http://worldtimeapi.org/api/ip";
+const worldTimeAPI = "https://worldtimeapi.org/api/ip";
 const geolocationAPI = "https://freegeoip.app/json/";
 const quoteAPI = "https://api.quotable.io/random";
 
