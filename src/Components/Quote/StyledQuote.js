@@ -13,9 +13,9 @@ export const QuoteContent = styled.p`
   filter: drop-shadow(2px 2px 2px #000000);
 
   @media only screen and (min-width: 700px)  {
-    font-size: 1.5em;
+    font-size: 2.1em;
     line-height: 1.4em;
-    font-weight: lighter;
+    font-weight: 200;
   }
 `;
 
@@ -23,6 +23,7 @@ export const QuoteAuthor = styled.p `
   margin-top: 0.7em;
   font-weight: 200;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 1.5em;
   filter: drop-shadow(2px 2px 2px #000000);
+  font-style: italic;
 `

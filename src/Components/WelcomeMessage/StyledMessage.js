@@ -15,4 +15,9 @@ export const MessageContent = styled.p`
   @media only screen and (min-width: 370px)  {
     font-size: 18px;
   }
+
+  @media only screen and (min-width: 700px)  {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
 `;

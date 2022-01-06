@@ -11,7 +11,11 @@ export const Time = styled.h1`
   font-size: 80px;
   line-height: 80px;
   letter-spacing: -2.5px;
-  
+  @media only screen and (min-width: 700px)  {
+    font-size: 120px;
+    margin-top: 1rem;  
+    margin-bottom: 1rem;
+  }
 `;
 
 export const TimeZone = styled.p`

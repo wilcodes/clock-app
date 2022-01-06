@@ -42,12 +42,9 @@ export const HourWrapper = styled.div`
   }
 
   @media only screen and (min-width: 700px)  {
-    top: ${props => props.isDropDownOpen ? "7%":"72%"};
+    top: ${props => props.isDropDownOpen ? "7%":"63%"};
   }
 
-  @media only screen and (min-width: 1025px)  {
-    top: ${props => props.isDropDownOpen ? "7%":"62%"};
-  }
   
 `
 export default Wrapper;
