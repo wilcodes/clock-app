@@ -1,4 +1,4 @@
-# clock-app🕓
+# Clock-app🕓
 ## Good looking clock web application inspired by Frontend Mentor 
 ### Built with
 - [React](https://reactjs.org/) - JS library
