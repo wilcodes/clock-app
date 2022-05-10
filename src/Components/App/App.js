@@ -13,7 +13,7 @@ import Button from "../Button/Button";
 import DropDownContent from "../DropDownContent/DropDownContent";
 
 const worldTimeAPI = "https://worldtimeapi.org/api/ip";
-const geolocationAPI = "https://freegeoip.app/json/";
+const geolocationAPI = "https://api.ipbase.com/v2/info?apikey=JxGlcSMJFzSEhLKGFfo31yxQMsCRPo4kqZebWg1a&ip=1.1.1.1";
 const quoteAPI = "https://api.quotable.io/random";
 
 
