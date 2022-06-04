@@ -12,4 +12,4 @@
 - In addition to that, the interface changes Based on the time of the day going from a day to a night mood.
 
 
-<!-- ### Link to the Project->[Clock App by Wilcodes and Frontend Mentor](https://hungry-einstein-8e0702.netlify.app)! -->
+### Link to the Project->[Clock App by Wilcodes and Frontend Mentor](https://hungry-einstein-8e0702.netlify.app)!
