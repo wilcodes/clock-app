@@ -1,7 +1,7 @@
 import {ClockWrapper, Time, TimeZone} from "./CurrentTimeStyles";
 
 const CurrentTime = (props) => {
-    return(
+    return (
         <ClockWrapper>
             <Time>
                 {props.currentTime}

@@ -1,6 +1,6 @@
 import {Content, Label, Row} from "./DropDownStyles";
 
-const Description = (props)=>(
+const Description = (props) => (
     <Row>
         <Label dayNight={props.dayNight}>
             {props.label}

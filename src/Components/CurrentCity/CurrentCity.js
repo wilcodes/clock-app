@@ -1,8 +1,8 @@
 import {LocationContent, LocationWrapper} from "./CurrentCityStyles";
 
-const CurrentCity = (props) =>{
+const CurrentCity = (props) => {
 
-    return(
+    return (
         <LocationWrapper>
             <LocationContent>
                 {props.region}, {props.country}

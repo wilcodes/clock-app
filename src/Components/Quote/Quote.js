@@ -1,7 +1,7 @@
 import {QuoteContent, QuoteWrapper, QuoteAuthor} from "./StyledQuote";
 
 
-const Quote = (props) =>(
+const Quote = (props) => (
     <QuoteWrapper>
         <QuoteContent>
             "{props.message}"

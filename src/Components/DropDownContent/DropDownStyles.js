@@ -7,12 +7,12 @@ export const DropDownBox = styled.div`
   left: 0;
   bottom: 0;
   height: 75%;
-  background-color:${ props  => props.dayNight ==="daylight" ? 'rgba(151, 151, 151, 0.9)' : 'rgba(0,0,0,0.9)'};
+  background-color:${props => props.dayNight === "daylight" ? 'rgba(151, 151, 151, 0.9)' : 'rgba(0,0,0,0.9)'};
   
   
   transition: transform 0.1s ease-in;
   box-sizing: border-box;
-  transform: ${ props  => props.isDropDownOpen ? 'translateY(50%)' : 'translateY(100%)'};
+  transform: ${props => props.isDropDownOpen ? 'translateY(50%)' : 'translateY(100%)'};
   padding: 0.5em;
 `;
 
@@ -49,7 +49,7 @@ export const Label = styled.li`
 `;
 
 export const Content = styled.li`
-  color:${ props  => props.dayNight ==="daylight" ? '#000000' : '#ffffff'};
+  color:${props => props.dayNight === "daylight" ? '#000000' : '#ffffff'};
   font-weight: 700;
   line-height: 10px;
   flex: 0 0 60%;
